@@ -1,0 +1,15 @@
+<?php
+
+namespace Tests\Feature;
+
+use Tests\TestCase;
+
+class SmokeTest extends TestCase
+{
+    public function test_the_homepage_can_render()
+    {
+        $response = $this->get('/');
+
+        $response->assertStatus(200);
+    }
+}
