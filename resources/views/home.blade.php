@@ -21,12 +21,13 @@
         <title>{{ config('app.name') }}</title>
 
         <meta name="description" content="Software Developer based in Santa Cruz, CA" />
+        <meta property="og:image" content="{{ asset('og-image.png') }}" />
         <meta property="og:description" content="Software Developer based in Santa Cruz, CA" />
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="dark:bg-neutral-800">
-        <div class="p-8 prose max-w-3xl dark:prose-invert">
+    <body class="dark:bg-neutral-800 prose dark:prose-invert flex flex-col justify-between min-h-screen">
+        <div class="p-8 max-w-3xl">
             <img class="h-10 w-10" src="{{ asset('profile-pic.png') }}" alt="">
 
             <h1>Sean Washington</h1>
@@ -39,6 +40,18 @@
                 <a href="https://metalab.com">MetaLab</a>.</p>
 
             <p>You can find me on <a href="https://twitter.com/seanwashbot">Twitter</a> and <a href="https://github.com/seanwash">GitHub</a>.</p>
+        </div>
+
+        <div class="p-8 text-xs flex items-center space-x-2">
+            <span>&copy; Sean Washington.</span>
+
+            <a
+                href="https://github.com/seanwash/seanwashcom"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                  <path fill-rule="evenodd" d="M14.447 3.027a.75.75 0 01.527.92l-4.5 16.5a.75.75 0 01-1.448-.394l4.5-16.5a.75.75 0 01.921-.526zM16.72 6.22a.75.75 0 011.06 0l5.25 5.25a.75.75 0 010 1.06l-5.25 5.25a.75.75 0 11-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 010-1.06zm-9.44 0a.75.75 0 010 1.06L2.56 12l4.72 4.72a.75.75 0 11-1.06 1.06L.97 12.53a.75.75 0 010-1.06l5.25-5.25a.75.75 0 011.06 0z" clip-rule="evenodd" />
+                </svg>
+            </a>
         </div>
     </body>
 </html>
