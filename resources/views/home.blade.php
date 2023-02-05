@@ -28,7 +28,7 @@
     </head>
     <body class="dark:bg-neutral-800 prose dark:prose-invert flex flex-col justify-between min-h-screen">
         <div class="p-8 max-w-3xl">
-            <img class="h-10 w-10" src="{{ asset('profile-pic.png') }}" alt="">
+            <img class="h-12 w-12 mt-0" src="{{ asset('profile-pic.png') }}" alt="">
 
             <h1>Sean Washington</h1>
 
