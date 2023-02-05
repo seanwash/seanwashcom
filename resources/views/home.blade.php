@@ -25,6 +25,13 @@
         <meta property="og:description" content="Software Developer based in Santa Cruz, CA" />
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        @if(config('analytics.enabled'))
+            <script
+                src="{{ config('analytics.fathom.script_url') }}"
+                data-site="{{ config('analytics.fathom.site_id') }}" defer
+            ></script>
+        @endif
     </head>
     <body class="dark:bg-neutral-800 prose dark:prose-invert flex flex-col justify-between min-h-screen">
         <div class="p-8 max-w-3xl">
