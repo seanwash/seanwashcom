@@ -18,7 +18,7 @@
     </head>
     <body>
         <div class="p-8 prose max-w-3xl dark:prose-invert">
-            <img class="h-10 w-10" src="profile-pic.png" alt="">
+            <img class="h-10 w-10" src="{{ asset('profile-pic.png') }}" alt="">
 
             <h1>Sean Washington</h1>
 
