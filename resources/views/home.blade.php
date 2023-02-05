@@ -25,7 +25,7 @@
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body>
+    <body class="dark:bg-neutral-800">
         <div class="p-8 prose max-w-3xl dark:prose-invert">
             <img class="h-10 w-10" src="{{ asset('profile-pic.png') }}" alt="">
 
