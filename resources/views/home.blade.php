@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout :seo="$seo">
     <div class="max-w-3xl">
         <h1>Sean Washington</h1>
 

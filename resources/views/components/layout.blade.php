@@ -1,3 +1,12 @@
+@props(['seo'])
+
+@php
+    $navLinks = [
+        'Home' => route('home'),
+        'Uses' => route('uses'),
+    ];
+@endphp
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -6,11 +15,11 @@
 
         <x-favicon />
 
-        <title>{{ config('app.name') }}</title>
+        <title>{{ $seo?->title ?? config('app.name') }}</title>
 
-        <meta name="description" content="Software Developer based in Santa Cruz, CA"/>
+        <meta name="description" content="{{ $seo?->description }}"/>
+        <meta property="og:description" content="{{ $seo?->description }}"/>
         <meta property="og:image" content="{{ asset('og-image.png') }}"/>
-        <meta property="og:description" content="Software Developer based in Santa Cruz, CA"/>
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -18,11 +27,21 @@
     </head>
     <body class="dark:bg-neutral-800 prose dark:prose-invert min-h-screen min-w-full flex flex-col justify-between">
         <div>
-            <header class="p-8">
+            <nav class="p-8 flex items-center space-x-4">
                 <a href="{{ route('home') }}" aria-label="Home">
                     <img class="h-12 w-12 m-0 inline-block" src="{{ asset('profile-pic.png') }}" alt="">
                 </a>
-            </header>
+
+                @foreach($navLinks as $label => $url)
+                    <a
+                        @class([
+                            'no-underline text-neutral-500 dark:text-neutral-400',
+                            'font-bold text-neutral-900 dark:text-neutral-100' => Route::is(Str::of($label)->kebab()),
+                        ])
+                        href="{{ $url }}"
+                    >{{ $label }}</a>
+                @endforeach
+            </nav>
 
             <main class="p-8 pt-0">
                 {{ $slot }}
@@ -30,7 +49,7 @@
         </div>
 
         <footer class="p-8 text-xs flex items-center space-x-2">
-            <span>&copy; Sean Washington.</span>
+            <span>&copy; {{ config('app.name') }}.</span>
 
             <a
                 href="https://github.com/seanwash/seanwashcom"
