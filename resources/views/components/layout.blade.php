@@ -15,7 +15,9 @@
 
         <x-favicon />
 
-        <title>{{ $seo?->title ?? config('app.name') }}</title>
+        <title>
+            @if($seo?->title) {{ $seo->title }} -@endif {{ config('app.name') }}
+        </title>
 
         <meta name="description" content="{{ $seo?->description }}"/>
         <meta property="og:description" content="{{ $seo?->description }}"/>
