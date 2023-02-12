@@ -26,6 +26,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         <x-analytics.fathom />
+        <x-analytics.seanwash />
     </head>
     <body class="dark:bg-neutral-800 prose dark:prose-invert min-h-screen min-w-full flex flex-col justify-between">
         <div>
