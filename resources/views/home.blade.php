@@ -8,7 +8,7 @@
             currently building tools to empower interior designers, both big at small, at
             <a href="https://onsidedoor.com">SideDoor</a>.</p>
 
-        <p>Before SideDoor, I co-hosted the <a href="https://dnc.show">Does Not Compute</a> Podcast, built (the
+        <p>Before SideDoor, I co-hosted the <a href="https://spec.fm/podcasts/does-not-compute">Does Not Compute</a> Podcast, built (the
             now-defunct)
             <a href="https://designkollective.com">Design Kollective</a>, and was an Engineering Lead at
             <a href="https://metalab.com">MetaLab</a>.</p>
