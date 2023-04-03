@@ -5,21 +5,21 @@
     </header>
 
     <ul>
-        @foreach($tools as $tool)
+        @foreach($bookmarks as $bookmark)
             <li>
                 <header>
                     <a
-                        href="{{ $tool->url }}"
+                        href="{{ $bookmark->url }}"
                         target="_blank"
                         rel="noopener noreferrer"
-                    >{{ $tool->name }}</a>
+                    >{{ $bookmark->name }}</a>
 
                     <span class="inline-block ml-1 text-xs py-1 px-2 rounded-full bg-neutral-100 dark:bg-neutral-700">
-                            {{ $tool->price }}
-                        </span>
+                        {{ $bookmark->type }}
+                    </span>
                 </header>
 
-                <p>{!! $tool->description !!}</p>
+                <p>{!! $bookmark->description !!}</p>
             </li>
         @endforeach
     </ul>
