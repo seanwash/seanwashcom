@@ -24,6 +24,12 @@ class Bookmarks
                 'type' => 'Video',
                 'description' => "Choc full of great tips for getting some momentum building towards writing software.",
             ],
+            [
+                'name' => 'Software Engineering Anxiety',
+                'url' => 'https://www.youtube.com/watch?v=-Afvtij-o2w',
+                'type' => 'Video',
+                'description' => "A short overview of two potential sources of anxiety that software engineers face and tips for dealing with them.",
+            ],
         ]);
     }
 }
