@@ -30,6 +30,12 @@ class Bookmarks
                 'type' => 'Video',
                 'description' => "A short overview of two potential sources of anxiety that software engineers face and tips for dealing with them.",
             ],
+            [
+                'name' => 'Your Approach to Programming Is Wrong',
+                'url' => 'https://www.youtube.com/watch?v=UAZflJ02JJo',
+                'type' => 'Video',
+                'description' => "As the producer writes, this is advice I wish I would have drilled into my head sooner.",
+            ],
         ]);
     }
 }
