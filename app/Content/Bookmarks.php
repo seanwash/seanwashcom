@@ -36,6 +36,12 @@ class Bookmarks
                 'type' => 'Video',
                 'description' => "As the producer writes, this is advice I wish I would have drilled into my head sooner.",
             ],
+            [
+                'name' => "Performance Doesn't Matter...Until It Does.",
+                'url' => 'https://www.youtube.com/watch?v=2Z4fZtSKlcE',
+                'type' => 'Video',
+                'description' => "A Theo rant on trade offs between iteration speed vs. correctness and performance in the various stages of building a product.",
+            ]
         ]);
     }
 }
