@@ -41,7 +41,14 @@ class Bookmarks
                 'url' => 'https://www.youtube.com/watch?v=2Z4fZtSKlcE',
                 'type' => 'Video',
                 'description' => "A Theo rant on trade offs between iteration speed vs. correctness and performance in the various stages of building a product.",
-            ]
+            ],
+            [
+                'name' => "Most tech content is bullshit",
+                'url' => 'https://www.aleksandra.codes/tech-content-consumer#how-to-stop-being-a-tech-consumer',
+                'type' => 'Article',
+                'description' => "\"Don’t consume. Create. Ask questions. Stay curious.\"",
+            ],
+
         ]);
     }
 }
