@@ -1,7 +1,7 @@
 @props(['seo'])
 
 @php
-    $menuItems = \App\Data\MenuData::collection(\App\Content\Menu::all());
+    $menuItems = \App\Data\MenuData::collection(\App\Models\Menu::all());
 @endphp
 
     <!DOCTYPE html>

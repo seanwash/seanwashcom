@@ -3,7 +3,7 @@
     use App\Data\BookmarkData;
     use App\Content\Bookmarks;
 
-    $seo = new SeoData(Bookmarks::$title, Bookmarks::$description);
+    $seo = new SeoData(Bookmarks::title(), Bookmarks::description());
     $bookmarks = BookmarkData::collection(Bookmarks::items());
 @endphp
 

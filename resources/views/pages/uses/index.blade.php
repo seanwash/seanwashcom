@@ -3,7 +3,7 @@
     use App\Data\ToolData;
     use App\Content\Tools;
 
-    $seo = new SeoData(Tools::$title, Tools::$description);
+    $seo = new SeoData(Tools::title(), Tools::description());
     $tools = ToolData::collection(Tools::items());
 @endphp
 

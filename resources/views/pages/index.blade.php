@@ -3,7 +3,7 @@
     use App\Data\BookmarkData;
     use App\Content\Home;
 
-    $seo = new SeoData(Home::$title, Home::$description);
+    $seo = new SeoData(Home::title(), Home::description());
 @endphp
 
 <x-layout :seo="$seo">
