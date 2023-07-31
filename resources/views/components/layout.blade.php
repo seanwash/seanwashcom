@@ -42,7 +42,7 @@
         <div>
             <nav class="p-8 flex items-center space-x-4">
                 <a
-                    href="{{ route('home') }}"
+                    href="/"
                     aria-label="Home"
                 >
                     <img

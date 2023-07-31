@@ -1,3 +1,12 @@
+@php
+    use App\Data\SeoData;
+    use App\Data\ToolData;
+    use App\Content\Tools;
+
+    $seo = new SeoData(Tools::$title, Tools::$description);
+    $tools = ToolData::collection(Tools::items());
+@endphp
+
 <x-layout :seo="$seo">
     <header>
         <h1 class="mb-0">{{ $seo->title }}</h1>

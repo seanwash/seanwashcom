@@ -12,4 +12,18 @@ class SmokeTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function test_the_uses_page_can_render()
+    {
+        $response = $this->get('/uses');
+
+        $response->assertStatus(200);
+    }
+
+    public function test_the_bookmarks_page_can_render()
+    {
+        $response = $this->get('/bookmarks');
+
+        $response->assertStatus(200);
+    }
 }

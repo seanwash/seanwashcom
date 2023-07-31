@@ -1,3 +1,12 @@
+@php
+    use App\Data\SeoData;
+    use App\Data\BookmarkData;
+    use App\Content\Bookmarks;
+
+    $seo = new SeoData(Bookmarks::$title, Bookmarks::$description);
+    $bookmarks = BookmarkData::collection(Bookmarks::items());
+@endphp
+
 <x-layout :seo="$seo">
     <header>
         <h1 class="mb-0">{{ $seo->title }}</h1>

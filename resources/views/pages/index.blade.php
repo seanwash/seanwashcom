@@ -1,3 +1,11 @@
+@php
+    use App\Data\SeoData;
+    use App\Data\BookmarkData;
+    use App\Content\Home;
+
+    $seo = new SeoData(Home::$title, Home::$description);
+@endphp
+
 <x-layout :seo="$seo">
     <header>
         <h1>Sean Washington</h1>
