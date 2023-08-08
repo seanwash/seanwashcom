@@ -56,10 +56,16 @@ class Tools implements Content
                 'description' => 'Raycast is a blazing fast alternative to Spotlight. I use it to launch apps, search my notes, and more.',
             ],
             [
+                'name' => 'Homerow',
+                'url' => 'https://www.homerow.app/',
+                'price' => 'Paid',
+                'description' => 'Like Raycast or Spotlight for macOS. Click, navigate, and perform tasks with the keyboard and no mouse.',
+            ],
+            [
                 'name' => 'BetterMouse',
                 'url' => 'https://better-mouse.com',
                 'price' => 'Paid',
-                'description' => "While I love my <a href='https://www.logitech.com/en-us/products/mice/mx-master-3s.910-006556.html'>MX Master 3S</a>, I don't love the software that Logitech provides. I've found BetterMouse to be a capable alternative!",
+                'description' => "<s>While I love my MX Master 3S, I don't love the software that Logitech provides. I've found BetterMouse to be a capable alternative!</s> BetterMouse is indeed a better alternative so I'm keeping it here, but I no longer use an MX Master 3S. I just couldn't get around seemingly random bluetooth issues.",
             ],
         ]);
     }
