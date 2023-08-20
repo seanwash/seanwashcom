@@ -9,9 +9,9 @@ provider:
   # Environment variables
   environment:
     APP_ENV: production # Or use ${sls:stage} if you want the environment to match the stage
-    APP_URL: https://seanwash.com
     ASSET_URL: ${construct:website.url}
     # https://us-west-1.console.aws.amazon.com/systems-manager/parameters/?region=us-west-1&tab=Table
+    APP_KEY: bref-ssm:/seanwashcom-prod/app-key
     ANALYTICS_SCRIPT_URL: bref-ssm:/seanwashcom-prod/analytics-script-url
     ANALYTICS_SITE_ID: bref-ssm:/seanwashcom-prod/analytics-site-id
   iam:
