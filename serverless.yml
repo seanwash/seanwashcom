@@ -1,0 +1,70 @@
+# https://bref.sh/docs/environment/serverless-yml
+service: seanwashcom
+
+provider:
+  name: aws
+  # The AWS region in which to deploy (us-east-1 is the default)
+  region: us-west-1
+  stage: prod
+  # Environment variables
+  environment:
+    APP_ENV: production # Or use ${sls:stage} if you want the environment to match the stage
+    APP_URL: https://seanwash.com
+    ASSET_URL: ${construct:website.url}
+    # https://us-west-1.console.aws.amazon.com/systems-manager/parameters/?region=us-west-1&tab=Table
+    ANALYTICS_SCRIPT_URL: bref-ssm:/seanwashcom-prod/analytics-script-url
+    ANALYTICS_SITE_ID: bref-ssm:/seanwashcom-prod/analytics-site-id
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action: ssm:GetParameters
+          Resource: 'arn:aws:ssm:${aws:region}:${aws:accountId}:parameter/seanwashcom-*'
+
+package:
+  # Files and directories to exclude from deployment
+  patterns:
+    - '!node_modules/**'
+    - '!public/storage'
+    - '!resources/assets/**'
+    - '!storage/**'
+    - '!tests/**'
+
+functions:
+  # This function runs the Laravel website/API
+  web:
+    handler: public/index.php
+    runtime: php-82-fpm
+    timeout: 28 # in seconds (API Gateway has a timeout of 29 seconds)
+    events:
+      - httpApi: '*'
+      - schedule:
+          rate: rate(5 minutes)
+          input:
+              warmer: true
+
+  # This function lets us run artisan commands in Lambda
+  artisan:
+    handler: artisan
+    runtime: php-82-console
+    timeout: 720 # in seconds
+    # Uncomment to also run the scheduler every minute
+    #events:
+    #    - schedule:
+    #          rate: rate(1 minute)
+    #          input: '"schedule:run"'
+
+plugins:
+  - ./vendor/bref/bref
+  - serverless-lift
+
+constructs:
+  website:
+    type: server-side-website
+    assets:
+      '/build/assets/*': public/build/assets
+      '/profile-pic.png': public/profile-pic.png
+      '/og-image.png': public/og-image.png
+      '/favicon.ico': public/favicon.ico
+      '/robots.txt': public/robots.txt
+      # add here any file or directory that needs to be served from S3

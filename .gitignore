@@ -13,6 +13,7 @@ auth.json
 npm-debug.log
 yarn-error.log
 .DS_Store
+/.serverless
 /.vapor
 /.idea
 /.vscode
